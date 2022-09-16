@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 const App = () => {
   
+  const [recipe, setRecipe] = useState([]);
   
   const API_ID = '92e3e3fb';
   const API_KEY = '2ab633677e5c7f99c9fa698846eb1858'
@@ -17,6 +18,9 @@ const App = () => {
     const data = await response.json()
 
     console.log(data);
+
+
+    
   }
 
   
@@ -27,6 +31,11 @@ const App = () => {
   
   return (
     <div className="App">
+      <h1>Title</h1>
+
+      <form  className="search-form"></form>
+
+
 
     </div>
   )
