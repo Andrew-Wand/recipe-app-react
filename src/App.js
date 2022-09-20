@@ -20,6 +20,7 @@ const App = () => {
     const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${API_ID}&app_key=${API_KEY}`);
     const data = await response.json()
     setRecipes(data.hits);
+    console.log(data);
   }
 
   const updateSearch = (e) => {
@@ -33,11 +34,21 @@ const App = () => {
     getRecipe();
   }
 
-  
-  
-  
-  
-  
+  const getRandom = async () => {
+    const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${API_ID}&app_key=${API_KEY}&random=true`);
+    const data = await response.json();
+    setRecipes(data.hits);
+  }
+
+
+
+  const randomRecipe = (e) => {
+      e.preventDefault();
+      getRandom();
+     
+  }
+
+ 
   
   return (
     <div className="App">
@@ -45,6 +56,10 @@ const App = () => {
       <form  className="search-form" onSubmit={getSearch}>
         <input type="text" className="search-input" value={search} onChange={updateSearch} />
         <button className="search-btn">Search</button>
+        
+      </form>
+      <form onSubmit={randomRecipe} >
+        <button className="random-btn">Random</button>
       </form>
       <div className="recipes">
         {recipes.map(recipe => (
@@ -54,13 +69,11 @@ const App = () => {
           calories={recipe.recipe.calories}
           image={recipe.recipe.image}
           ingredients={recipe.recipe.ingredients}
-          
           />
         ))}
       </div>
 
-
-
+     
     </div>
   )
 }
