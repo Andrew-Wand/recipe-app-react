@@ -49,7 +49,7 @@ const App = () => {
   
   return (
     <div className="App">
-      <h1>Title</h1>
+      <h1>Recipe Search</h1>
       <form  className="search-form" onSubmit={getSearch}>
         <input type="text" className="search-input" value={search} onChange={updateSearch} />
         <button className="search-btn">Search</button>
@@ -68,8 +68,6 @@ const App = () => {
           />
         ))}
       </div>
-
-     
     </div>
   )
 }
