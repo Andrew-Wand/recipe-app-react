@@ -1,73 +1,66 @@
 import React, {useState, useEffect} from 'react'
-import Recipe from "./Components/Recipe";
+import Header from "./Components/Header";
+import { Routes, Route} from "react-router-dom";
+import FullRecipe from './Components/FullRecipe';
+import Home from './Components/Home';
+
 
 const App = () => {
+
+const [recipes, setRecipes] = useState([]);
+const[search, setSearch] = useState('');
+
+const API_ID = '92e3e3fb';
+const API_KEY = '2ab633677e5c7f99c9fa698846eb1858'
+
+
+const getRecipe = async () => {
+  const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${API_ID}&app_key=${API_KEY}`);
+  const data = await response.json()
+  setRecipes(data.hits);
+  console.log(data);
+}
+
+const getSearch = (e) => {
+  e.preventDefault();
+  getRecipe();
+}
   
-  const [recipes, setRecipes] = useState([]);
-  const[search, setSearch] = useState();
   // const [query, setQuery] = useState();
   
-  const API_ID = '92e3e3fb';
-  const API_KEY = '2ab633677e5c7f99c9fa698846eb1858'
-  
+
 
   // useEffect(() => {
   //   getRecipe();
   // }, [query]);
 
 
-  const getRecipe = async () => {
-    const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${API_ID}&app_key=${API_KEY}`);
-    const data = await response.json()
-    setRecipes(data.hits);
-    console.log(data);
-  }
+  // const getRandom = async () => {
+  //   const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${API_ID}&app_key=${API_KEY}&random=true`);
+  //   const data = await response.json();
+  //   setRecipes(data.hits);
+  // }
 
-  const updateSearch = (e) => {
-    setSearch(e.target.value);
-  }
-
-  const getSearch = (e) => {
-    e.preventDefault();
-    // setQuery(search);
-    setSearch('');
-    getRecipe();
-  }
-
-  const getRandom = async () => {
-    const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${API_ID}&app_key=${API_KEY}&random=true`);
-    const data = await response.json();
-    setRecipes(data.hits);
-  }
-
-  const randomRecipe = (e) => {
-      e.preventDefault();
-      getRandom();
+  // const randomRecipe = (e) => {
+  //     e.preventDefault();
+  //     getRandom();
      
-  }
+  // }
 
   
   return (
     <div className="App">
-      <h1>Recipe Search</h1>
-      <form  className="search-form" onSubmit={getSearch}>
-        <input type="text" className="search-input" value={search} onChange={updateSearch} />
-        <button className="search-btn">Search</button>
-        
-      </form>
-      <form onSubmit={randomRecipe} >
+      <Header handleSubmit={getSearch} search={search} setSearch={setSearch} />
+
+      <Routes>
+        <Route path='/' element={<Home search={search} recipes={recipes} />}></Route>
+        <Route path='/recipe/:name' element={<FullRecipe />}></Route>
+      </Routes>
+
+      {/* <form onSubmit={randomRecipe} >
         <button className="random-btn">Random</button>
-      </form>
-      <div className="recipes">
-        {recipes.map(recipe => (
-          <Recipe 
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-          />
-        ))}
-      </div>
+      </form> */}
+
     </div>
   )
 }
