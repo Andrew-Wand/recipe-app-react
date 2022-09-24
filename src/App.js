@@ -23,6 +23,7 @@ const getRecipe = async () => {
 
 const getSearch = (e) => {
   e.preventDefault();
+  setSearch('');
   getRecipe();
 }
   

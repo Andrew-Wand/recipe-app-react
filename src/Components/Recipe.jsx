@@ -1,14 +1,22 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-function Recipe({recipe}) {
+function Recipe({recipe, ingredients}) {
   return (
     <div className="recipe-container">
 
+
+      {/* Hover ingredients */}
       <div className="ingredients-container">
         <img src={recipe.recipe.image} alt="recipe images" className="recipe-img" />
-        <div className="ingredients">{recipe.recipe.ingredientLines}</div>
-      </div>
+        <div className="ingredients">
+          <ol>
+          {ingredients.map(ingredient => (
+            <li>{ingredient.text}</li>
+            ))}
+          </ol>
+            </div>
+        </div>
       
 
       <div className="recipe-info-container">
@@ -18,24 +26,12 @@ function Recipe({recipe}) {
       </div>
       
       
-      
-      
     <button className="fullrecipe-btn">
       <Link to={`/recipe/${recipe.recipe.label}`} state={{data: recipe}}>Full Recipe</Link>
     </button>
       
       
-      
-      
-      
-      
-      {/* <h1>{title}</h1>
-      <ol>
-        {ingredients.map(ingredient => (
-          <li>{ingredient.text}</li>
-        ))}
-      </ol>
-      <img src={image} alt="" className="recipe-img" /> */}
+
     </div>
   )
 }
