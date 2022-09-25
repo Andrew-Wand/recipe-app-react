@@ -5,6 +5,11 @@ function Recipe({recipe, ingredients}) {
   return (
     <div className="recipe-container">
 
+    <div className="recipe-info-container">
+        <div className="recipe-info">
+          <h1>{recipe.recipe.label}</h1>
+        </div>
+      </div>
 
       {/* Hover ingredients */}
       <div className="ingredients-container">
@@ -19,11 +24,7 @@ function Recipe({recipe, ingredients}) {
         </div>
       
 
-      <div className="recipe-info-container">
-        <div className="recipe-info">
-          <h1>{recipe.recipe.label}</h1>
-        </div>
-      </div>
+     
       
       
     <button className="fullrecipe-btn">
