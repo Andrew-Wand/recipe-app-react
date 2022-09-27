@@ -14,22 +14,15 @@ function Recipe({recipe, ingredients}) {
       {/* Hover ingredients */}
       <div className="ingredients-container">
         <img src={recipe.recipe.image} alt="recipe images" className="recipe-img" />
-        <div className="ingredients">
-          <ol>
-          {ingredients.map(ingredient => (
-            <li>{ingredient.text}</li>
-            ))}
-          </ol>
-            </div>
         </div>
       
 
      
       
       
-    <button className="fullrecipe-btn">
-      <Link to={`/recipe/${recipe.recipe.label}`} state={{data: recipe}}>Full Recipe</Link>
-    </button>
+    {/* <button className="fullrecipe-btn"> */}
+      <Link to={`/recipe/${recipe.recipe.label}`} state={{data: recipe}} className='fullrecipe-btn'>Full Recipe</Link>
+    {/* </button> */}
       
       
 
