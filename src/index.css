@@ -13,12 +13,47 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, .7);
   padding: 1em 0em;
   margin-bottom: 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, .8);
   height: 10em;
+  background-color: #EB5353;
 }
+
+.logo-container {
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  font-size: 1.3em;
+  padding: .5em .9em .5em 1.7em;
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.search-btn {
+  cursor: pointer;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  width: 100px;
+  border-left: 1px solid #000;
+  border-bottom: none;
+  border-right: none;
+  border-bottom: none;
+
+}
+
+
 
 /* RECIPES */
 

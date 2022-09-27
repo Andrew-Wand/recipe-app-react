@@ -9,7 +9,11 @@ const updateSearch = (e) => {
 
   return (
     <nav className="header-container">
+
+      <div className="logo-container">
         <h1>Recipe Search</h1>
+      </div>
+        
             <form className="search-form" onSubmit={handleSubmit}>
                 <input type="text" className="search-input" value={search} onChange={updateSearch} />
                 <input className="search-btn" type='submit' value='Search' />
