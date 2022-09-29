@@ -79,10 +79,11 @@ body {
   font-size: 1.3em;
   background-color: rgba(0, 0, 0, 1);
   color: #fff;
+  transition: background-color .3s;
 }
 
 .search-btn:hover {
-  background-color: rgba(236, 228, 228, .4);
+  background-color: rgba(255, 255, 255, .7)
 }
 
 
@@ -105,13 +106,16 @@ body {
  
 }
 
-.recipe-info h1 {
+.recipe-title h1 {
   font-family: 'Hind Siliguri', sans-serif;
+  text-align: center;
 }
 
 .recipe-img {
   /* padding: 1em; */
   margin-bottom: 2em;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .ingredients-container {
@@ -137,3 +141,5 @@ body {
 .fullrecipe-btn a {
  
 }
+
+/* FULL RECIPE PAGE */

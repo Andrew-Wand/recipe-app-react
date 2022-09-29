@@ -6,14 +6,16 @@ function Recipe({recipe, ingredients}) {
     <div className="recipe-container">
 
     <div className="recipe-info-container">
-        <div className="recipe-info">
+        <div className="recipe-title">
           <h1>{recipe.recipe.label}</h1>
         </div>
       </div>
 
-      {/* Hover ingredients */}
+      
       <div className="ingredients-container">
         <img src={recipe.recipe.image} alt="recipe images" className="recipe-img" />
+
+        <p className='recipe-info'>Calories: {recipe.recipe.calories.toFixed()} | {recipe.recipe.ingredients.length} Ingredients</p>
         </div>
       
 
