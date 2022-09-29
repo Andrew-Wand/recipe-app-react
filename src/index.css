@@ -32,6 +32,7 @@ body {
     color: #000;
     font-weight: bolder;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .logo-icon {
@@ -86,6 +87,8 @@ body {
   background-color: rgba(255, 255, 255, .7)
 }
 
+/* HEADER MEDIA QUERIES */
+
 
 
 /* RECIPES */
@@ -109,6 +112,9 @@ body {
 .recipe-title h1 {
   font-family: 'Hind Siliguri', sans-serif;
   text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-size: 28px;
 }
 
 .recipe-img {
@@ -125,7 +131,7 @@ body {
 
 .fullrecipe-btn {
     padding: .8em 1em;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: bold;
     border-radius: 5px;
     border: none;
@@ -138,8 +144,45 @@ body {
     
 }
 
-.fullrecipe-btn a {
- 
+.recipe-info {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
 }
 
+
+
 /* FULL RECIPE PAGE */
+
+.back-btn {
+    padding: .8em 1em;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background-color: #EB5353;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1em;
+}
+
+.fullrecipe-container {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.fullrecipe-title {
+  font-family: 'Hind Siliguri', sans-serif;
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-size: 28px;
+}
+
+.fullrecipe-ingred {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 3em;
+}

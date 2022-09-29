@@ -9,23 +9,25 @@ const data = location.state?.data;
 
 
   return (
-    <div>
+    <div className='fullrecipe-container'>
         {data && (
-            <div>
-                <h3>{params.name}</h3>
-                <img src={data.recipe.image} alt="img" />
-                <div className="ingredients-container">
+            <div >
+                <h3 className='fullrecipe-title'>{params.name}</h3>
+                <img className='recipe-img' src={data.recipe.image} alt="img" />
+                <div className="fullrecipe-ingred">
                     <ol>
                         {data.recipe.ingredients.map(ingredient => (
                             <li>{ingredient.text}</li>
                         ))}
                     </ol>
+                    
                 </div>
+                <Link to='/' className='back-btn'>Back</Link>
             </div>
         )}
 
 
-        <Link to='/'>Home</Link>
+        
     </div>
   )
 }

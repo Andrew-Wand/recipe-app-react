@@ -3,7 +3,7 @@ import Header from "./Components/Header";
 import { Routes, Route} from "react-router-dom";
 import FullRecipe from './Components/FullRecipe';
 import Home from './Components/Home';
-
+import ScrollToTop from "react-scroll-to-top";
 
 const App = () => {
 
@@ -61,6 +61,8 @@ const getSearch = (e) => {
       {/* <form onSubmit={randomRecipe} >
         <button className="random-btn">Random</button>
       </form> */}
+
+    <ScrollToTop smooth />
 
     </div>
   )
