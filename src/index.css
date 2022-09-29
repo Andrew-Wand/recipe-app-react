@@ -116,6 +116,7 @@ body {
 
 .ingredients-container {
   text-align: center;
+  font-weight: bolder;
 }
 
 .fullrecipe-btn {
