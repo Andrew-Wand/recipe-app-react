@@ -33,7 +33,7 @@ const updateSearch = (e) => {
 
 
 
-            <ol>
+            <ol className='recent-list'>
               {storageItems.map((item) => {
                return ( 
                

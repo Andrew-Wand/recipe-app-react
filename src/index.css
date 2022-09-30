@@ -236,3 +236,8 @@ body {
   line-height: 30px;
 }
 
+/* RECENT SEARCH */
+
+.recent-list {
+  display: none;
+}
