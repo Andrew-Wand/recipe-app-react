@@ -32,7 +32,7 @@ body {
     color: #000;
     font-weight: bolder;
     text-decoration: underline;
-    cursor: pointer;
+    cursor: default;
 }
 
 .logo-icon {
@@ -147,6 +147,11 @@ body {
   margin-bottom: 2em;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: transform .5s;
+}
+
+.recipe-img:hover {
+  transform: scale(.9);
 }
 
 .ingredients-container {
@@ -166,7 +171,11 @@ body {
     cursor: pointer;
     color: #fff;
     text-decoration: none;
-    
+    transition: background-color .3s;
+}
+
+.fullrecipe-btn:hover {
+  background-color: rgba(0, 0, 0, .7);
 }
 
 .recipe-info {
@@ -224,4 +233,6 @@ body {
   text-align: center;
   font-weight: bolder;
   margin-bottom: 3em;
+  line-height: 30px;
 }
+

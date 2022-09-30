@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Header from "./Components/Header";
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route, json} from "react-router-dom";
 import FullRecipe from './Components/FullRecipe';
 import Home from './Components/Home';
 import ScrollToTop from "react-scroll-to-top";
@@ -9,6 +9,7 @@ const App = () => {
 
 const [recipes, setRecipes] = useState([]);
 const[search, setSearch] = useState('');
+
 
 const API_ID = '92e3e3fb';
 const API_KEY = '2ab633677e5c7f99c9fa698846eb1858'
@@ -25,15 +26,32 @@ const getSearch = (e) => {
   e.preventDefault();
   setSearch('');
   getRecipe();
+  saveSearch();
 }
-  
-  // const [query, setQuery] = useState();
-  
+
+const saveSearch = (e) => {
+
+  let existingEntries = JSON.parse(localStorage.getItem('allTerms'));
+
+  if (existingEntries === null) {
+     existingEntries = []
+  }
+  const searchItem = {search};
 
 
-  // useEffect(() => {
-  //   getRecipe();
-  // }, [query]);
+
+
+  localStorage.setItem('testObject', JSON.stringify(searchItem));
+
+
+  
+  existingEntries.push(searchItem)
+
+  localStorage.setItem('allTerms', JSON.stringify(existingEntries));
+
+
+}
+
 
 
   // const getRandom = async () => {

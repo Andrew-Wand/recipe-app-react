@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import 'animate.css';
 
 function Recipe({recipe, ingredients}) {
   return (
-    <div className="recipe-container">
+    <div className="recipe-container animate__animated animate__fadeInUp">
 
     <div className="recipe-info-container">
         <div className="recipe-title">
