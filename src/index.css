@@ -259,9 +259,17 @@ body {
 
   .recent-search-container{
     position: absolute;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, .5);
     top: 25%;
     left: 29%;
     width: 38%;
+    opacity: 0;
+    transition: opacity .5s;
   }
+
+
+  .search-form:focus-within .recent-search-container {
+    opacity: 1;
+  }
+
 }

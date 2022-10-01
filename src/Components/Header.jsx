@@ -36,10 +36,7 @@ const updateSearch = (e) => {
                 <i className="glass-icon">{glassIcon}</i>
                 <input autoFocus type="text" className="search-input" value={search} onChange={updateSearch} placeholder='Search here...'  />
                 <input className="search-btn" type='submit' value='Search' />
-            </form>
-
-
-            <div className="recent-search-container">
+                <div className="recent-search-container">
               <ol className='recent-list'>
                 {arr1.map((item) => {
                   return ( 
@@ -52,6 +49,10 @@ const updateSearch = (e) => {
               
                 </ol>
             </div>
+            </form>
+
+
+            
            
     
     
