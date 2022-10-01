@@ -241,3 +241,27 @@ body {
 .recent-list {
   display: none;
 }
+
+
+
+/* RECENT SEARCH MEDIA QUERIES */
+/* Tablet media queries */
+@media (min-width: 600px) {
+ 
+}
+
+/* Desktop media queries */
+@media (min-width: 1281px) {
+
+  .recent-list {
+    display: block;
+  }
+
+  .recent-search-container{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7);
+    top: 25%;
+    left: 29%;
+    width: 38%;
+  }
+}

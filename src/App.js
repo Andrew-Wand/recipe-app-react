@@ -43,13 +43,15 @@ const saveSearch = (e) => {
   localStorage.setItem('testObject', JSON.stringify(searchItem));
 
 
+  existingEntries.push(searchItem);
+
   
-  existingEntries.push(searchItem)
-
+  
   localStorage.setItem('allTerms', JSON.stringify(existingEntries));
-
-
+ 
+ 
 }
+
 
 
 

@@ -11,6 +11,13 @@ const glassIcon = <FontAwesomeIcon icon={faMagnifyingGlass} />
 const storageItems = JSON.parse(localStorage.getItem('allTerms'));
 
 
+function getUniqueListBy(storageItems, key) {
+  return [...new Map(storageItems.map(item => [item[key], item])).values()]
+}
+
+const arr1 = getUniqueListBy(storageItems, 'search')
+
+
 const updateSearch = (e) => {
     setSearch(e.target.value);
   }
@@ -27,23 +34,25 @@ const updateSearch = (e) => {
         
             <form className="search-form" onSubmit={handleSubmit}>
                 <i className="glass-icon">{glassIcon}</i>
-                <input type="text" className="search-input" value={search} onChange={updateSearch} placeholder='Search here...'  />
+                <input autoFocus type="text" className="search-input" value={search} onChange={updateSearch} placeholder='Search here...'  />
                 <input className="search-btn" type='submit' value='Search' />
             </form>
 
 
-
-            <ol className='recent-list'>
-              {storageItems.map((item) => {
-               return ( 
+            <div className="recent-search-container">
+              <ol className='recent-list'>
+                {arr1.map((item) => {
+                  return ( 
                
-               <li >
-                 {item.search}
-                   </li> 
+                    <li>
+                      {item.search}
+                    </li> 
                )
               })}
               
-            </ol>
+                </ol>
+            </div>
+           
     
     
    
