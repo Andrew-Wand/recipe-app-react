@@ -70,7 +70,7 @@ const saveSearch = (e) => {
   
   return (
     <div className="App">
-      <Header handleSubmit={getSearch} search={search} setSearch={setSearch} />
+      <Header handleSubmit={getSearch} search={search} setSearch={setSearch} getRecipe={getRecipe} />
 
       <Routes>
         <Route path='/' element={<Home search={search} recipes={recipes} />}></Route>
