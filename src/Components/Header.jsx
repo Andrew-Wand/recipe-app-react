@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUtensils, faMagnifyingGlass  } from '@fortawesome/free-solid-svg-icons'
 
-function Header({search, setSearch, handleSubmit, recipe}) {
+function Header({search, setSearch, handleSubmit, recipe, getRecipe}) {
 
 const logoIcon = <FontAwesomeIcon icon={faUtensils} />
 const glassIcon = <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -22,6 +22,19 @@ const updateSearch = (e) => {
     setSearch(e.target.value);
   }
 
+const searchRecent = (e) => {
+    const btnValue = e.target.value;
+
+    const searchInput = document.getElementById('search-input');
+
+    searchInput.value = btnValue;
+    
+    setSearch(btnValue);
+  
+}
+
+
+
   return (
     <nav className="header-container">
 
@@ -34,16 +47,20 @@ const updateSearch = (e) => {
         
             <form className="search-form" onSubmit={handleSubmit}>
                 <i className="glass-icon">{glassIcon}</i>
-                <input autoFocus type="text" className="search-input" value={search} onChange={updateSearch} placeholder='Search here...'  />
+                <input type="text" className="search-input" id='search-input' value={search} onChange={updateSearch} placeholder='Search here...'  />
                 <input className="search-btn" type='submit' value='Search' />
                 <div className="recent-search-container">
-              <ol className='recent-list'>
-                {arr1.map((item) => {
-                  return ( 
-               
+                <ol className='recent-list'>
+                  {arr1.map((item) => {
+                    return ( 
+                    
                     <li>
-                      {item.search}
-                    </li> 
+                      <input onClick={searchRecent} type='button' value={item.search} className='recent-btn' id='recent-btn'/>
+                      <button className='remove-btn' id='remove-btn'>X</button>
+                    </li>
+                    
+                    
+                   
                )
               })}
               
