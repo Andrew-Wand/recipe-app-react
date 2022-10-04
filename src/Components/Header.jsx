@@ -15,7 +15,7 @@ function getUniqueListBy(storageItems, key) {
   return [...new Map(storageItems.map(item => [item[key], item])).values()]
 }
 
-const arr1 = getUniqueListBy(storageItems, 'search')
+const arr1 = getUniqueListBy(storageItems, 'search');
 
 
 const updateSearch = (e) => {
@@ -33,21 +33,25 @@ const searchRecent = (e) => {
   
 }
 
+console.log(arr1);
+
+const removeBtn = () => {
+    
+}
 
 
   return (
     <nav className="header-container">
 
       <div className="logo-container">
-       
+    
         <h1> <i className='logo-icon'>{logoIcon}</i>Recipe Search</h1>
 
-        
       </div>
         
             <form className="search-form" onSubmit={handleSubmit}>
                 <i className="glass-icon">{glassIcon}</i>
-                <input type="text" className="search-input" id='search-input' value={search} onChange={updateSearch} placeholder='Search here...'  />
+                <input type="text" className="search-input" id='search-input' value={search} onChange={updateSearch} placeholder='Search here...' autoComplete='off' />
                 <input className="search-btn" type='submit' value='Search' />
                 <div className="recent-search-container">
                 <ol className='recent-list'>
@@ -55,12 +59,10 @@ const searchRecent = (e) => {
                     return ( 
                     
                     <li>
-                      <input onClick={searchRecent} type='button' value={item.search} className='recent-btn' id='recent-btn'/>
-                      <button className='remove-btn' id='remove-btn'>X</button>
+                      <input onClick={searchRecent} type='button' value={item.search} className='recent-btn' id='recent-btn' />
+                      <button onClick={removeBtn} className='remove-btn' id='remove-btn'>X</button>
                     </li>
-                    
-                    
-                   
+                  
                )
               })}
               
