@@ -19,7 +19,7 @@ const getRecipe = async () => {
   const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${API_ID}&app_key=${API_KEY}`);
   const data = await response.json()
   setRecipes(data.hits);
-  console.log(data);
+  
 }
 
 const getSearch = (e) => {
@@ -29,7 +29,7 @@ const getSearch = (e) => {
   saveSearch();
 }
 
-const saveSearch = (e) => {
+const saveSearch = () => {
 
   let existingEntries = JSON.parse(localStorage.getItem('allTerms'));
 

@@ -17,6 +17,11 @@ function getUniqueListBy(storageItems, key) {
 
 const arr1 = getUniqueListBy(storageItems, 'search');
 
+arr1.forEach((item, i) => {
+  item.id = i + 1;
+});
+
+
 
 const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -35,8 +40,13 @@ const searchRecent = (e) => {
 
 console.log(arr1);
 
-const removeBtn = () => {
-    
+
+
+function removeBtn(index) {
+ const list = [...arr1];
+ list.splice(index, 1);
+ return list;
+
 }
 
 
@@ -55,12 +65,12 @@ const removeBtn = () => {
                 <input className="search-btn" type='submit' value='Search' />
                 <div className="recent-search-container">
                 <ol className='recent-list'>
-                  {arr1.map((item) => {
+                  {arr1.map((item, index) => {
                     return ( 
                     
                     <li>
                       <input onClick={searchRecent} type='button' value={item.search} className='recent-btn' id='recent-btn' />
-                      <button onClick={removeBtn} className='remove-btn' id='remove-btn'>X</button>
+                      <button onClick={() => removeBtn(index)} className='remove-btn' id='remove-btn'>X</button>
                     </li>
                   
                )

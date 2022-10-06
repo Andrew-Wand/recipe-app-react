@@ -23,9 +23,9 @@ function Recipe({recipe, ingredients}) {
      
       
       
-    {/* <button className="fullrecipe-btn"> */}
+    
       <Link to={`/recipe/${recipe.recipe.label}`} state={{data: recipe}} className='fullrecipe-btn'>Full Recipe</Link>
-    {/* </button> */}
+  
       
       
 
