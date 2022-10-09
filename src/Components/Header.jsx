@@ -38,14 +38,12 @@ const searchRecent = (e) => {
   
 }
 
-console.log(arr1);
 
 
 
-function removeBtn(index) {
- const list = [...arr1];
- list.splice(index, 1);
- return list;
+
+function removeBtn() {
+ 
 
 }
 
@@ -61,10 +59,10 @@ function removeBtn(index) {
         
             <form className="search-form" onSubmit={handleSubmit}>
                 <i className="glass-icon">{glassIcon}</i>
-                <input type="text" className="search-input" id='search-input' value={search} onChange={updateSearch} placeholder='Search here...' autoComplete='off' />
+                <input type="text" className="search-input" id='search-input' value={search} onChange={updateSearch} placeholder='Search here...' autoComplete='on' />
                 <input className="search-btn" type='submit' value='Search' />
                 <div className="recent-search-container">
-                <ol className='recent-list'>
+                {/* <ol className='recent-list'>
                   {arr1.map((item, index) => {
                     return ( 
                     
@@ -76,7 +74,7 @@ function removeBtn(index) {
                )
               })}
               
-                </ol>
+                </ol> */}
             </div>
             </form>
 

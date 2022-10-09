@@ -49,17 +49,7 @@ const saveSearch = () => {
 
 
 
-  // const getRandom = async () => {
-  //   const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${API_ID}&app_key=${API_KEY}&random=true`);
-  //   const data = await response.json();
-  //   setRecipes(data.hits);
-  // }
 
-  // const randomRecipe = (e) => {
-  //     e.preventDefault();
-  //     getRandom();
-     
-  // }
 
   
   return (
@@ -71,9 +61,6 @@ const saveSearch = () => {
         <Route path='/recipe/:name' element={<FullRecipe />}></Route>
       </Routes>
 
-      {/* <form onSubmit={randomRecipe} >
-        <button className="random-btn">Random</button>
-      </form> */}
 
     <ScrollToTop smooth />
 
